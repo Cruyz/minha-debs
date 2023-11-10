@@ -20,6 +20,12 @@
             color: #2ecc71;
             text-decoration: none;
             font-weight: bold;
+            cursor: pointer;
+        }
+        #mensagem-adicional {
+            display: none;
+            color: #f39c12;
+            font-style: italic;
         }
     </style>
 </head>
@@ -32,7 +38,15 @@
     <p>Você é a razão do meu sorriso e a inspiração por trás do meu coração feliz.</p>
     <p>Estou muito feliz por ter você na minha vida!</p>
     
-    <p>Envie uma mensagem especial clicando <a id="mensagem-link" href="https://www.seusite.com/mensagem">aqui</a>!</p>
+    <p id="mensagem-adicional">Você é a pessoa mais especial do mundo para mim!</p>
+    
+    <p>Clique <a id="mensagem-link" href="#">aqui</a> para ver uma mensagem adicional!</p>
+
+    <script>
+        document.getElementById('mensagem-link').addEventListener('click', function() {
+            document.getElementById('mensagem-adicional').style.display = 'block';
+        });
+    </script>
 
 </body>
 </html>
