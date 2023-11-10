@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosso 5º Mês Juntos</title>
+    <title>Nosso Aniversário de Namoro</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
             text-align: center;
             margin: 20px;
+            color: #333;
         }
         h1 {
             color: #e74c3c;
@@ -20,32 +22,69 @@
             color: #2ecc71;
             text-decoration: none;
             font-weight: bold;
+        }
+        .mes-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .mes {
+            flex: 1;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
             cursor: pointer;
         }
-        #mensagem-adicional {
-            display: none;
-            color: #f39c12;
-            font-style: italic;
+        .mes:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
 
     <h1>Parabéns pelos 5 meses juntos!</h1>
-    
-    <p>Desde que nos conhecemos na academia, minha vida se iluminou.</p>
-    <p>Cada olhar trocado foi como uma faísca de amor que cresceu ao longo do tempo.</p>
-    <p>Você é a razão do meu sorriso e a inspiração por trás do meu coração feliz.</p>
-    <p>Estou muito feliz por ter você na minha vida!</p>
-    
-    <p id="mensagem-adicional">Você é a pessoa mais especial do mundo para mim!</p>
-    
-    <p>Clique <a id="mensagem-link" href="#">aqui</a> para ver uma mensagem adicional!</p>
+
+    <div class="mes-container">
+        <div class="mes" onclick="mostrarMensagem(1)">Mês 1</div>
+        <div class="mes" onclick="mostrarMensagem(2)">Mês 2</div>
+        <div class="mes" onclick="mostrarMensagem(3)">Mês 3</div>
+        <div class="mes" onclick="mostrarMensagem(4)">Mês 4</div>
+        <div class="mes" onclick="mostrarMensagem(5)">Mês 5</div>
+    </div>
+
+    <div id="mensagens">
+        <!-- Área para exibir as mensagens -->
+    </div>
 
     <script>
-        document.getElementById('mensagem-link').addEventListener('click', function() {
-            document.getElementById('mensagem-adicional').style.display = 'block';
-        });
+        function mostrarMensagem(mes) {
+            var container = document.getElementById("mensagens");
+            var mensagem = "";
+
+            switch (mes) {
+                case 1:
+                    mensagem = "Parabéns pelo nosso primeiro mês juntos! Cada dia ao seu lado é uma bênção.";
+                    break;
+                case 2:
+                    mensagem = "Dois meses maravilhosos! O tempo voa quando estamos nos divertindo e apaixonados.";
+                    break;
+                case 3:
+                    mensagem = "Três meses de carinho e risos. Mal posso esperar pelos muitos mais que virão.";
+                    break;
+                case 4:
+                    mensagem = "Quatro meses de amor verdadeiro! Obrigado por ser a minha inspiração diária.";
+                    break;
+                case 5:
+                    mensagem = "Feliz aniversário de namoro! Cinco meses incríveis e muitos mais por vir. Te amo!";
+                    break;
+                default:
+                    mensagem = "Selecione um mês para ver a mensagem correspondente.";
+            }
+
+            container.innerHTML = "<p>" + mensagem + "</p>";
+        }
     </script>
 
 </body>
